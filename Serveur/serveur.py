@@ -3,7 +3,7 @@
 
 import socket
 
-IP_Serv = "127.0.0.1"#Addresse du serveur
+IP_Serv = "192.168.2.254" #Addresse du serveur
 port = 12800 #Port du serveur
 
 serveur = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -12,7 +12,6 @@ serveur.bind((IP_Serv, port))
 
 while True:
     data, addresse = serveur.recvfrom(6)
-    print 'Donner reçu: ', data #Affiche les données reçues
-
+    print 'Donner reçu: ', data #Affichage des données reçu
 
 
