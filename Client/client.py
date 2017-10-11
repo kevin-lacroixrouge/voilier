@@ -21,9 +21,11 @@ print 'Message envoyé: ', trame[0],trame[1],trame[2],trame[3]
 
 connexion_serveur.sendto (trame, (IP_Dest, port)) #Envoie du message au serveur
 
+tramereponse,addresse = connexion_serveur.recvfrom(32) #Reçoit les données depuis le serveur
 
-tramereponse,addresse = connexion_serveur.recvfrom(32)
+latitude = (ord(tramereponse[4])<<24)+(ord(tramereponse[5])<<16)+(ord(tramereponse[6])<<8)+(ord(tramereponse[7])) #Décalage des bits
 
+longitude = (ord(tramereponse[8])<<24)+(ord(tramereponse[9])<<16)+(ord(tramereponse[10])<<8)+(ord(tramereponse[11])) #Décalage des bits
 
 print '------------------------'
 
@@ -33,6 +35,7 @@ print 'ID: ', ord(tramereponse[0])
 print 'Taille: ', ord(tramereponse[1])
 print 'Vitesse du vent: ',ord(tramereponse[2]), 'Noeud'
 print 'Direction du vent: ',ord(tramereponse[3]),'°'
-print 'Latitude: ',ord(tramereponse[4]),ord(tramereponse[5]),ord(tramereponse[6]),ord(tramereponse[7])
-print 'Longitude: ',ord(tramereponse[8]),ord(tramereponse[9]),ord(tramereponse[10]),ord(tramereponse[11])
-print 'Gite: ', ord(tramereponse[12]), '°'
+print 'Latitude: ', float(latitude) / 1000000
+print 'Longitude: ',float(longitude) / 1000000
+print 'Gite: ', ord(tramereponse[12]),'°'
+
