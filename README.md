@@ -1,6 +1,8 @@
 #Projet voilier
 
-#Rajout du serveur et Client UDP
+####Rajout d'un nouveau client en classe
 
-#Rajout de la possibilité au serveur de répondre au client
+####Rajout du serveur et Client UDP
+
+####Rajout de la possibilité au serveur de répondre au client
 
