@@ -1,8 +1,11 @@
-#Projet voilier
+<img src="https://cdn.pixabay.com/photo/2015/08/18/15/57/compass-894377_960_720.jpg" width="100px"/>
 
-####Rajout d'un nouveau client en classe
+# Voilier
 
-####Rajout du serveur et Client UDP
+Programmes de communications et IHM pour le voilier <b>La Croix Rouge</b>
 
-####Rajout de la possibilité au serveur de répondre au client
+# Updates
 
+Rajout d'un nouveau client en classe <br>
+Rajout du serveur et Client UDP <br>
+Rajout de la possibilité au serveur de répondre au client

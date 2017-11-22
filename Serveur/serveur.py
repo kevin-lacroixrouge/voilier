@@ -4,10 +4,12 @@
 import socket
 
 latitude = 1651782 #Latitude
-longitude = 8745696 #Longitude
+longitude = -86745696 #Longitude
 Gite = 20 #Gite
 VVent = 4 #Vitesse du vent
 DVent = 60 #Direction du vent
+#ValSafran = 75 #Valeur du Safran
+#ValGV = 90 #Valeur de la grande voile
 
 IP_Serv = "127.0.0.1" #Addresse du serveur
 port = 12800 #Port du serveur
@@ -17,17 +19,15 @@ print 'Démarage ...'
 serveur.bind((IP_Serv, port))
 
 
-lat3=(latitude>>24) #Décalage de 24 bits par la droite
+lat3=(latitude>>24)&0xFF #Décalage de 24 bits par la droite
 lat2=(latitude>>16)&0xFF #Décalage de 16 bits par la droite
 lat1=(latitude>>8)&0xFF #Décalage de 8 bits par la droite
 lat0=(latitude&0xFF)
 
-
-lon3=(longitude>>24) #Décalage de 24 bits par la droite
+lon3=(longitude>>24)&0xFF #Décalage de 24 bits par la droite
 lon2=(longitude>>16)&0xFF #Décalage de 16 bits par la droite
 lon1=(longitude>>8)&0xFF #Décalage de 8 bits par la droite
 lon0=(longitude&0xFF)
-
 
 while True:
     data, addresse = serveur.recvfrom(4)
