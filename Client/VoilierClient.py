@@ -26,7 +26,11 @@ class VoilierClient: #Création de la classe "VoilierClient"
 		#socket.SOCK_STREAM = UDP
 
 
-	def txrx(self): #Création de la méthode 'txrx'
+	def txrx(self, valSF, valGV): #Création de la méthode 'txrx'
+
+			self.valSF = valSF
+			self.valGV = valGV
+			
 			trame = bytearray([self.id,2,self.valSF,self.valGV]) #Définition de la Trame d'envoie au serveur
 
 			print 'Message envoyé: ', trame[0],trame[1],trame[2],trame[3] #Affichage de la Trame envoyé
@@ -76,21 +80,21 @@ class VoilierClient: #Création de la classe "VoilierClient"
 
 
 client = VoilierClient()
-client.initCom("127.0.0.1",12800) #Connexion au serveur avec l'IP et le Port
-client.valSF=10 #On définit une valeur pour le Safran
-client.valGV=48 #On définit une valeur pour la Grande voile
-client.txrx()
-print '------------------------------------'
-print 'Paramètre du serveur:'
-print 'Adresse IP: ',client.ipserveur #Affichage de l'adresse IP contenu dans 'self.ipserveur'
-print 'Port du serveur: ',client.port #Affichage du port du serveur contenu dans 'self.port'
-print '------------------------------------'
-print 'ID: ', client.id #Affichage dde l'ID contenu dans 'self.id'
-print 'Taille: ',client.taille #Affichage de la taille contenu dans 'self.taille'
-print 'Gite: ',client.gite #Affichage de la gite contenu dans 'self.gite'
-print 'Latitude: ',client.latitude #Affichage de la latitude contenu dans 'self.latitude'
-print 'Longitude: ',client.longitude #Affichage de la longitude contenu dans 'self.longitude'
-print 'Vitesse du vent: ',client.vitVent,' Noeud' #Affichage de la vitesse du vent contenu dans 'self.vitVent'
-print 'Orientation du vent: ',client.orientVent #Affichage de l'orientation du vent contenu dans 'self.orientVent'
-print 'Valeur Safran: ',client.valSF #Affichage de la valeur du safran contenu dans 'self.valSF'
-print 'Valeur Grande Voile: ',client.valGV #Affichage de la valeur de la grande voile contenu dans 'self.valGV'
+#client.initCom("127.0.0.1",12800) #Connexion au serveur avec l'IP et le Port
+#client.valSF=10 #On définit une valeur pour le Safran
+#client.valGV=48 #On définit une valeur pour la Grande voile
+#client.txrx()
+#print '------------------------------------'
+#print 'Paramètre du serveur:'
+#print 'Adresse IP: ',client.ipserveur #Affichage de l'adresse IP contenu dans 'self.ipserveur'
+#print 'Port du serveur: ',client.port #Affichage du port du serveur contenu dans 'self.port'
+#print '------------------------------------'
+#print 'ID: ', client.id #Affichage dde l'ID contenu dans 'self.id'
+#print 'Taille: ',client.taille #Affichage de la taille contenu dans 'self.taille'
+#print 'Gite: ',client.gite #Affichage de la gite contenu dans 'self.gite'
+#print 'Latitude: ',client.latitude #Affichage de la latitude contenu dans 'self.latitude'
+#print 'Longitude: ',client.longitude #Affichage de la longitude contenu dans 'self.longitude'
+#print 'Vitesse du vent: ',client.vitVent,' Noeud' #Affichage de la vitesse du vent contenu dans 'self.vitVent'
+#print 'Orientation du vent: ',client.orientVent #Affichage de l'orientation du vent contenu dans 'self.orientVent'
+#print 'Valeur Safran: ',client.valSF #Affichage de la valeur du safran contenu dans 'self.valSF'
+#print 'Valeur Grande Voile: ',client.valGV #Affichage de la valeur de la grande voile contenu dans 'self.valGV'
