@@ -72,6 +72,7 @@ class IHM(tk.Frame):
     def connect(self):
         self.log.insert('1.0',"Connection...\n")
         self.client.initCom(self.inputIP.get(),int(self.inputPort.get()))
+        self.log.insert('1.0',"Connection refusé!")
         self.log.insert('1.0',"\n")
         self.log.insert('1.0',self.inputPort.get())
         self.log.insert('1.0',"Port du serveur: ")
@@ -81,13 +82,14 @@ class IHM(tk.Frame):
 
 
 
+
     def test(self):
         self.client.txrx(self.scaleSafran.get(), self.scaleGV.get())
-        self.lbGiteValue.set(self.client.gite())
-        self.lbLongitudeValue.set(self.client.longitude())
-        self.lbLatitudeValue.set(self.client.latitude())
-        self.lbOrientVent.set(self.client.orientVent())
-        self.lbVitVentValue.set(self.client.vitVent())
+        self.lbGiteValue.config(text=self.client.gite)
+        self.lbLongitudeValue.config(text=self.client.longitude)
+        self.lbLatitudeValue.config(text=self.client.latitude)
+        self.lbOrientVentValue.config(text=self.client.orientVent)
+        self.lbVitVentValue.config(text=self.client.vitVent)
 
 
     def valueGVChanged(self,value):
