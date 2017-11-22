@@ -6,6 +6,7 @@ Programmes de communications et IHM pour le voilier <b>La Croix Rouge</b>
 
 # Updates
 
+Ajout d'un IHM
 Rajout d'un nouveau client en classe <br>
 Rajout du serveur et Client UDP <br>
 Rajout de la possibilité au serveur de répondre au client
